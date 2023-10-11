@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "challenge-api", "TestAPI\challenge-api.csproj", "{F1EF44A0-474F-42EF-8E73-D2F09858E593}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8187D5C4-052C-43D3-8501-749E56CDB1BC} = {8187D5C4-052C-43D3-8501-749E56CDB1BC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "challenge-api-base", "challenge-api-base\challenge-api-base.csproj", "{8187D5C4-052C-43D3-8501-749E56CDB1BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1EF44A0-474F-42EF-8E73-D2F09858E593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1EF44A0-474F-42EF-8E73-D2F09858E593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1EF44A0-474F-42EF-8E73-D2F09858E593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EF44A0-474F-42EF-8E73-D2F09858E593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8187D5C4-052C-43D3-8501-749E56CDB1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8187D5C4-052C-43D3-8501-749E56CDB1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8187D5C4-052C-43D3-8501-749E56CDB1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8187D5C4-052C-43D3-8501-749E56CDB1BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF8F0E39-7126-402B-BDA2-A4AC70A67B6E}
+	EndGlobalSection
+EndGlobal
