@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using NSwag.Annotations;
 
 namespace challenge_api_base.Models
 {
@@ -11,7 +12,7 @@ namespace challenge_api_base.Models
 
     public class Cliente
     {
-        public int Id { get; set; }
+        [SwaggerIgnore] public int Id { get; set; }
         [Required] public TipoCliente TipoCliente { get; set; }
         public string NombresYApellidos { get; set; } // Obligatorio si es PersonaNatural
         public string RazonSocial { get; set; } // Obligatorio si es PersonaJuridica

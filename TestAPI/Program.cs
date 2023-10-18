@@ -1,4 +1,6 @@
 using challenge_api_base.Data;
+using challenge_api_base.Repositories;
+using challenge_api_base.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -10,6 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("MyInMemoryDb"));
 
 builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IInformacionDeContactoService, InformacionDeContactoService>();
 
 builder.Services.AddControllers();

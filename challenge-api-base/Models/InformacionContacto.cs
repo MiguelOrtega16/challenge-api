@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using NSwag.Annotations;
 
 namespace challenge_api_base.Models
 {
     public class InformacionContacto
     {
-        public int Id { get; set; }
+        [SwaggerIgnore] public int Id { get; set; }
         [Required] public string Direccion { get; set; }
         [Required] public string Ciudad { get; set; }
         [Required] public string Pais { get; set; }
