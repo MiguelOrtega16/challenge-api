@@ -1,6 +1,8 @@
 using challenge_api_base.Data;
 using challenge_api_base.Repositories;
 using challenge_api_base.Repositories.Interfaces;
+using challenge_api_base.Utils;
+using challenge_api_base.Utils.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -13,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<ISucursalService, SucursalService>();
+builder.Services.AddScoped<ISucursalRepository, SucursalRepository>();
 builder.Services.AddScoped<IInformacionDeContactoService, InformacionDeContactoService>();
 
 builder.Services.AddControllers();
@@ -31,8 +35,6 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Challenge API v1");
     c.RoutePrefix = string.Empty; // Para acceder a Swagger en la raíz
-});
-
-// ... otras configuraciones de la tubería ...
+});  
 
 app.Run();

@@ -1,4 +1,5 @@
 ﻿using challenge_api_base.Models;
+using challenge_api_base.Utils.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
@@ -7,11 +8,13 @@ public class ClientesController : ControllerBase
 {
     private readonly IClienteService _clienteService;
     private readonly IInformacionDeContactoService _infoContactoService;
+    private readonly ISucursalService _sucursalService;
 
-    public ClientesController(IClienteService clienteService, IInformacionDeContactoService infoContactoService)
+    public ClientesController(IClienteService clienteService, IInformacionDeContactoService infoContactoService, ISucursalService sucursalService)
     {
         _clienteService = clienteService;
         _infoContactoService = infoContactoService;
+        _sucursalService = sucursalService;
     }
 
     [HttpGet]
@@ -62,7 +65,7 @@ public class ClientesController : ControllerBase
 
         foreach (Sucursal sucursal in cliente.Sucursales)
         {
-            if (await _clienteService.ExisteTelefonoEnSucursalAsync(sucursal.InfoContactoSucursal.TelefonoFijo,
+            if (await _sucursalService.ExisteTelefonoEnSucursalAsync(sucursal.InfoContactoSucursal.TelefonoFijo,
                     sucursal.InfoContactoSucursal.TelefonoCelular, cliente.Id, sucursal.Id))
             {
                 return BadRequest($"El teléfono fijo o celular de la sucursal {sucursal.CodigoSucursal} ya está en uso.");
