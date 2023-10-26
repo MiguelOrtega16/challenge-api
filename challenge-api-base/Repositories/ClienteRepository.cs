@@ -19,9 +19,11 @@ namespace challenge_api_base.Repositories
         public async Task<bool> AddClienteAsync(Cliente cliente)
         {
             await _context.Clientes.AddAsync(cliente);
+            await _context.InformacionContactos.AddAsync(cliente.InfoContacto);
             foreach (Sucursal sucursal in cliente.Sucursales)
             {
                 sucursal.ClienteId = cliente.Identificador;
+                _context.InformacionContactoSucursales.Add(sucursal.InfoContactoSucursal);
                 _context.Sucursales.Add(sucursal);
             }
 

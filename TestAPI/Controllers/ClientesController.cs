@@ -23,10 +23,10 @@ public class ClientesController : ControllerBase
         return Ok(await _clienteService.GetAllClientesAsync());
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Cliente>> GetCliente(string id)
+    [HttpGet("{identificador}")]
+    public async Task<ActionResult<Cliente>> GetCliente(string identificador)
     {
-        Cliente cliente = await _clienteService.GetClienteByIdAsync(id);
+        Cliente cliente = await _clienteService.GetClienteByIdAsync(identificador);
         if (cliente == null)
         {
             return NotFound();
