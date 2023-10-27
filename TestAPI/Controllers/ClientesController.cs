@@ -1,5 +1,6 @@
 ﻿using challenge_api_base.Models;
 using challenge_api_base.Utils.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
@@ -23,6 +24,8 @@ public class ClientesController : ControllerBase
         return Ok(await _clienteService.GetAllClientesAsync());
     }
 
+    // Ejemplo de autorización
+    [Authorize]
     [HttpGet("{identificador}")]
     public async Task<ActionResult<Cliente>> GetCliente(string identificador)
     {
